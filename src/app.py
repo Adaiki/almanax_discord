@@ -42,7 +42,7 @@ async def almanax(ctx, arg=date.today().strftime("%d-%m")):
 
 async def send_request(day):
     try:
-        r = requests.get("http://demmon.fr:5001/almanax/" + day)
+        r = requests.get(os.getenv('API_URL') + day)
         r.raise_for_status()
     except requests.exceptions.RequestException as err:
         embed=discord.Embed(title="RequestException", description=err)        
