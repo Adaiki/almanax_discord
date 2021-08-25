@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  bot:
+    container_name: almanax_discord
+    build: ./src/
+    volumes:
+      - ./src/:/usr/src/app/
+    env_file: 
+      - prod.env
+    restart: always
