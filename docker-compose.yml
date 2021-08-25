@@ -8,4 +8,6 @@ services:
       - ./src/:/usr/src/app/
     env_file: 
       - prod.env
+    environment: 
+      - TZ=Europe/Paris
     restart: always
